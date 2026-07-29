@@ -17,8 +17,10 @@ public class LevelUIManager : MonoBehaviour
 
     void Start()
     {
-        levelText.text = "LEVEL " + SceneManager.GetActiveScene().buildIndex;
-        animator.Play("LevelIntro");
+        if (levelText != null)
+            levelText.text = "LEVEL " + SceneManager.GetActiveScene().buildIndex;
+        if (animator != null)
+            animator.Play("LevelIntro");
     }
 
     public void CompleteLevel()
@@ -28,8 +30,10 @@ public class LevelUIManager : MonoBehaviour
 
     IEnumerator LevelCompleteRoutine()
     {
-        levelText.text = "LEVEL COMPLETE!";
-        animator.Play("LevelComplete");
+        if (levelText != null)
+            levelText.text = "LEVEL COMPLETE!";
+        if (animator != null)
+            animator.Play("LevelComplete");
 
         yield return new WaitForSeconds(2.5f);
 
@@ -37,5 +41,7 @@ public class LevelUIManager : MonoBehaviour
 
         if (next < SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(next);
+        else
+            SceneManager.LoadScene(0);
     }
 }

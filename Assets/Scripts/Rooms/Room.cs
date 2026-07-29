@@ -25,7 +25,12 @@ public class Room : MonoBehaviour
             {
                 enemies[i].SetActive(status);
                 enemies[i].transform.position = initialPosition[i];
-                
+
+                EnemyPatrol patrol = enemies[i].GetComponentInParent<EnemyPatrol>(true);
+                if (patrol != null)
+                {
+                    patrol.gameObject.SetActive(status);
+                }
             }
         }
     }
