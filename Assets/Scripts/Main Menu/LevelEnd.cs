@@ -14,8 +14,13 @@ public class LevelEnd : MonoBehaviour
 
         levelEnding = true;
 
+        if (animator == null && LevelUIManager.Instance != null)
+        {
+            animator = LevelUIManager.Instance.animator;
+        }
+
         if (animator != null)
-            animator.SetTrigger("LevelOutro");
+            animator.Play("LevelOutro");
 
         if (LevelUIManager.Instance != null)
         {

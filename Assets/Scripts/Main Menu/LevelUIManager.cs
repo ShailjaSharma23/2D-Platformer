@@ -13,6 +13,25 @@ public class LevelUIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        if (levelText == null)
+            levelText = GetComponent<TMP_Text>();
+        if (levelText == null)
+            levelText = GetComponentInChildren<TMP_Text>(true);
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
+
+        // Disable other child TMP_Text GameObjects to avoid duplicate/overlapping text from manual scene edits
+        if (levelText != null)
+        {
+            foreach (TMP_Text childText in GetComponentsInChildren<TMP_Text>(true))
+            {
+                if (childText != levelText)
+                {
+                    childText.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 
     void Start()
@@ -33,7 +52,7 @@ public class LevelUIManager : MonoBehaviour
         if (levelText != null)
             levelText.text = "LEVEL COMPLETE!";
         if (animator != null)
-            animator.Play("LevelComplete");
+            animator.Play("LevelOutro");
 
         yield return new WaitForSeconds(2.5f);
 
