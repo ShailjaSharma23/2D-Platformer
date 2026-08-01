@@ -36,6 +36,7 @@ public class EnemyProjectile : EnemyDamage
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.isTrigger) return;
         hit = true;
         base.OnTriggerEnter2D(collision); //Execute logic from parent script first
 

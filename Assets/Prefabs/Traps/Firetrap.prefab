@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Firetrap
   damage: 1
-  activationDelay: 1
+  activationDelay: 0.2
   activeTime: 2
   firetrapSound: {fileID: 8300000, guid: 2c78d9cf4a64b864ea276641f04d2b82, type: 3}
 --- !u!95 &6366906258893640924
