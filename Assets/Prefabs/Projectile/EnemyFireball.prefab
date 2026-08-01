@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1960046903307258170}
   - component: {fileID: 5648492729226152949}
-  - component: {fileID: 5852230641613913542}
   - component: {fileID: 5506457586720054555}
   - component: {fileID: 4615659559843363744}
   - component: {fileID: 3357778687885719008}
@@ -96,19 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5852230641613913542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561816809004319294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94853bff06bbd5409017d2c527dccdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 10
 --- !u!61 &5506457586720054555
 BoxCollider2D:
   m_ObjectHideFlags: 0

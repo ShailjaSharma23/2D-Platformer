@@ -14,6 +14,9 @@ public class LevelEnd : MonoBehaviour
 
         levelEnding = true;
 
+        // Unlock the next level based on the completed level's build index
+        LevelSelection.UnlockNextLevel(SceneManager.GetActiveScene().buildIndex);
+
         if (animator == null && LevelUIManager.Instance != null)
         {
             animator = LevelUIManager.Instance.animator;
