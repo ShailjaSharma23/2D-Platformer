@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        Physics2D.IgnoreLayerCollision(8, 9, false);
     }
 
     public void TakeDamage(float damage)
